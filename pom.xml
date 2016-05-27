@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.designthoughts.sample</groupId>
+  <artifactId>axon-sfav</artifactId>
+  <version>0.0.1</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>axon-sfav-customer</module>
+  	<module>axon-sfav-group</module>
+  	<module>axon-sfav-account</module>
+  	<module>axon-sfav-query</module>
+  	<module>axon-sfav-transaction</module>
+    <module>axon-sfav-center-config</module>
+    <module>axon-sfav-gateway</module>
+    <module>axon-sfav-service-discovery</module>
+    <module>axon-sfav-webui</module>
+  </modules>
+</project>
