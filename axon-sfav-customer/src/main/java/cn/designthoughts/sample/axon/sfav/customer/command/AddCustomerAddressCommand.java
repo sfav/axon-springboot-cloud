@@ -13,25 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.designthoughts.sample.axon.sfav.customer;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+package cn.designthoughts.sample.axon.sfav.customer.command;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import cn.designthoughts.sample.axon.sfav.customer.domain.*;
 
 /**
  * @author Thomas Yuan
  */
 
-@RestController
-@EnableDiscoveryClient
-@SpringBootApplication
-public class CustomerApplication {
+public class AddCustomerAddressCommand {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CustomerApplication.class, args);
-    }
+	private CustomerId customerId;
+    
+    private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+
+	public AddCustomerAddressCommand(CustomerId customerId, Address address){
+		this.customerId = customerId;
+		this.address = address;
+	}
+	
+    public CustomerId getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(CustomerId customerId) {
+		this.customerId = customerId;
+	}
+
 }

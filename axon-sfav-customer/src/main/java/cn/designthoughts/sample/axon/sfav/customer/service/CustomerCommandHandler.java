@@ -58,7 +58,11 @@ public class CustomerCommandHandler {
         Customer customer = customerRepository.load(command.getCustomerId());
         customer.activate(customer.getIdentifier());
     }
-
+    @CommandHandler
+    public void handle(AddCustomerAddressCommand command) {
+        Customer customer = customerRepository.load(command.getCustomerId());
+        customer.addAddress(customer.getIdentifier(), command.getAddress());
+    }
     @Autowired
     public void setRepository(EventSourcingRepository<Customer> customerRepository) {
         this.customerRepository = customerRepository;

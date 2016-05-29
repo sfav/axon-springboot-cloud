@@ -70,7 +70,13 @@ public class Customer extends AbstractAnnotatedAggregateRoot {
     public void activate(CustomerId customerId) {
     	apply(new CustomerActivatedEvent(customerId));
     }
-
+    
+    public void addAddress(CustomerId customerId, Address newAddress) {
+    	if(!addresses.contains(newAddress)){
+    		apply(new CustomerAddressAddedEvent(customerId, newAddress));
+    	}    	
+    }
+    
     @Override
     public CustomerId getIdentifier() {
         return this.customerId;
@@ -95,5 +101,10 @@ public class Customer extends AbstractAnnotatedAggregateRoot {
     @EventHandler
     public void handle(CustomerActivatedEvent event) {
 		this.status = Status.ACTIVE;
+    }
+    
+    @EventHandler
+    public void handle(CustomerAddressAddedEvent event) {
+		this.addresses.add(event.getAddress());
     }
 }

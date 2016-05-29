@@ -41,8 +41,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.designthoughts.sample.axon.sfav.customer.command.ActivateCustomerCommand;
+import cn.designthoughts.sample.axon.sfav.customer.command.AddCustomerAddressCommand;
 import cn.designthoughts.sample.axon.sfav.customer.command.CreateCustomerCommand;
+import cn.designthoughts.sample.axon.sfav.customer.controller.request.CreateAddressForCustomerRequest;
 import cn.designthoughts.sample.axon.sfav.customer.controller.request.CreateCustomerRequest;
+import cn.designthoughts.sample.axon.sfav.customer.domain.Address;
 import cn.designthoughts.sample.axon.sfav.customer.domain.Customer;
 import cn.designthoughts.sample.axon.sfav.customer.domain.CustomerId;
 
@@ -79,6 +82,19 @@ public class CustomerController {
 						request.getEmailAddress(),
 						request.getCreationDate()
 				));
+		return;
+	}
+
+	@RequestMapping(value = "/rest/customers/{customerId}/address", method = RequestMethod.POST)
+	@ResponseStatus(value = HttpStatus.NO_CONTENT)
+	public void createAddressForCustomer(@PathVariable String customerId, @RequestBody @Valid CreateAddressForCustomerRequest request) {
+		commandGateway.send(
+			new AddCustomerAddressCommand(
+				new CustomerId(customerId),
+				new Address(request.getBuilding(),
+					request.getStreet(), 
+					request.getCity(), 
+					request.getCountry())));
 		return;
 	}
 
