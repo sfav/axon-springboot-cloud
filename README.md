@@ -15,7 +15,7 @@ The function of the application is simple: to do customer creation, customer lis
 
 Architecture Diagram  
 
-![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-architecture.jpg)  
+![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/master/axon-sfav-webui/src/main/resources/static/image/sfav-architecture.jpg)  
 
 This reference application uses the following data store, but they could be changed to other type with small changes.
 
@@ -36,13 +36,13 @@ Note,
 	- There will be warning message shown for configuration service due to not able to register with Eureka. 
 3.  Visit link http://{your-computer-name}:8080/ui, it will show this introduction, click create to enter new customer, and then query the customer list and see details.   
  
-![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-home.jpg) 
+![Home View](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/master/axon-sfav-webui/src/main/resources/static/image/sfav-home.png) 
 
-![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-create.jpg) 
+![Create View](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/master/axon-sfav-webui/src/main/resources/static/image/sfav-create.png) 
 
-![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-list.jpg) 
+![List View](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/master/axon-sfav-webui/src/main/resources/static/image/sfav-list.png) 
 
-![Architecture Diagram](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-query.jpg) 
+![Query Details View](https://raw.githubusercontent.com/sfav/axon-springboot-cloud/master/axon-sfav-webui/src/main/resources/static/image/sfav-query.png) 
   
 
 ###License
