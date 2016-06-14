@@ -1,31 +1,30 @@
 
 <div class="container">
-
-	<h2>Spring Cloud with Axon Event Sourcing, CQRS Example</h2>
+	<h2>Spring Cloud with Axon Event Sourcing, CQRS and AngularJS Example</h2>
 	<h3>Introduction</h3>
-	<p>This application is a Spring Cloud example of using
-		axon event sourcing in microservices. The project is intended to
-		demonstrate end-to-end practice for building a microservice
-		architecture that implement event sourcing and CQRS(Command Query
-		Responsibility Segregation) using Spring Cloud and Axon Framework. It
-		also demonstrates the usage of AngularJS SPA when building the Web UI
+	<p>This application is a Spring Cloud example of using axon event
+		sourcing in microservices. The project is intended to demonstrate
+		end-to-end practice for building a microservice architecture that
+		implement event sourcing and CQRS(Command Query Responsibility
+		Segregation) using Spring Cloud and Axon Framework. It also
+		demonstrates the usage of AngularJs SPA when building the Web UI
 		server.</p>
 	<p>The function of the application is simple: to do customer
 		creation, customer list and query. It includes the following
 		microservices:</p>
 	<ul>
-		<li>Edge Service that route request to different micro services
+		<li>Edge Service that routes request to different microservices
 			(Zuul)</li>
-		<li>Discovery Service that discover the micro service that
-			available and facilate Zuul for the routing (Eureka)</li>
-		<li>Configuration Service that used to provide center
+		<li>Discovery Service that discovers the microservices available
+			and facilate Zuul for the routing (Eureka)</li>
+		<li>Configuration Service that is used to provide center
 			configuration</li>
 		<li>Web UI Resource Server that contains the static resources
 			like html, javascript and css, etc.</li>
 		<li>Customer Command Service with Axon Event Sourcing, it would
 			handle customer creation, updates and also log the latest information
 			to DB2 which would be used for query.</li>
-		<li>Customer Query Service that handle query of customer
+		<li>Customer Query Service that handles query of customer
 			information.</li>
 	</ul>
 	<p>Architecture Diagram</p>
@@ -35,7 +34,7 @@
 			alt="Architecture Diagram" />
 	</p>
 	<p>This reference application uses the following data store, but
-		they could be changed to other type with small change.</p>
+		they could be changed to other type with small changes.</p>
 	<ul>
 		<li>H2 - Customer Query</li>
 		<li>File - Axon Event Store</li>
@@ -58,7 +57,7 @@
 			<p>Note,</p>
 			<ul>
 				<li>The configuration service need to be started first so that
-					other service could get correct property.</li>
+					other services could get correct property.</li>
 				<li>The configuration service will get properties from <a
 					href="https://github.com/sfav/axon-springboot-cloud-config">Sfav
 						Configuration Repository</a>.
@@ -68,9 +67,29 @@
 			</ul>
 		</li>
 		<li>Visit link http://{your-computer-name}:8080/ui, it will show
-			thisintroduction, click create to enter new customer, and then query
+			this introduction, click create to enter new customer, and then query
 			the customer list and see details.</li>
 	</ol>
+	<p>
+		<img
+			src="https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-home.jpg"
+			alt="Architecture Diagram" />
+	</p>
+	<p>
+		<img
+			src="https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-create.jpg"
+			alt="Architecture Diagram" />
+	</p>
+	<p>
+		<img
+			src="https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-list.jpg"
+			alt="Architecture Diagram" />
+	</p>
+	<p>
+		<img
+			src="https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-query.jpg"
+			alt="Architecture Diagram" />
+	</p>
 	<h3>License</h3>
 	<p>This project is licensed under Apache License 2.0.</p>
 
