@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.designthoughts.sample.axon.sfav.customer.entry;
+package cn.designthoughts.sample.axon.sfav.query.customer.entry;
 /**
  * @author Thomas Yuan
  */

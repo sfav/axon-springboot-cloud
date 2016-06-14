@@ -1,0 +1,103 @@
+<!-- Page Content -->
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Customer Information Creation
+                <small>Create Customer to The System</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/ui/index.html">Home</a>
+                </li>
+                <li class="active">Customer Create</li>
+            </ol>
+        </div>
+
+    </div>
+
+<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Customer Information Input
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+	                                    <fieldset disabled>
+                                            <div class="form-group">
+                                                <label for="disabledSelect">Customer Number</label>
+                                                <input class="form-control" id="disabledInput" type="text" 
+                                                placeholder="Customer Number" disabled
+                                                ng-model="input.customer.number">
+                                            </div>
+                                        </fieldset>
+                                        <div class="form-group">
+                                            <label>Nick Name</label>
+                                            <input class="form-control" placeholder="Enter Nick Name"
+                                            ng-model="input.customer.nickName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Legal Name</label>
+                                            <input class="form-control" placeholder="Enter Legal Name"
+                                            ng-model="input.customer.legalName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Personal Home Page</label>
+                                            <input class="form-control" placeholder="Enter Personal Home Page Url"
+                                            ng-model="input.customer.personalHomePageUrl">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mobile Number</label>
+                                            <input class="form-control" placeholder="Enter Mobile Number"
+                                            ng-model="input.customer.mobileNumber">
+                                        </div>
+                                       <div class="form-group">
+                                            <label>Email</label>
+                                            <input class="form-control" placeholder="Enter Email"
+                                            ng-model="input.customer.emailAddress">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input class="form-control" type="password" placeholder="Enter Password"
+                                            ng-model="input.customer.password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Category</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="INDIVIDUAL" checked ng-model="input.customer.category">Individual
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="ENTERPRISE" ng-model="input.customer.category">Enterprise
+                                            </label>
+                                        </div>                                                                                                                         
+                                               
+                                        <button ng-click="createCustomer()" class="btn btn-default">Create</button>
+                                        <button ng-click="resetInput()" class="btn btn-default">Reset</button>
+                                        
+                                        <div ng-show="successResult" class="alert alert-info">
+			                                <label>{{message}}</label><a class="alert-link" ng-click="queryCustomer()">Show Customer Details</a>
+			                            </div>
+			                            <div ng-show="failResult" class="alert alert-danger">
+			                                <label>{{message}}</label>
+			                            </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package cn.designthoughts.sample.axon.sfav.customer.entry;
+
+package cn.designthoughts.sample.axon.sfav.query.customer.entry;
 
 import org.springframework.data.repository.CrudRepository;
 /**
  * @author Thomas Yuan
  */
 public interface CustomerEntryRepository extends CrudRepository<CustomerEntry, Long>{
-	public CustomerEntry save(CustomerEntry customerEntry);
 	public CustomerEntry findById(Long id);
 	public CustomerEntry findByIdentifier(String identifier);
 	public CustomerEntry findByNickName(String nickName);

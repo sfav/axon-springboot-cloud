@@ -1,0 +1,80 @@
+<!-- Page Content -->
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col-lg-12">
+			<h1 class="page-header">
+				Customer Inquiry <small>To List and View Customer Details</small>
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="/ui/index.html">Home</a></li>
+				<li><a href="/ui/index.html#/query">Customer Inquiry</a></li>
+				<li class="active">Customer Details</li>
+			</ol>
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<!-- /.col-lg-6 -->
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Customer Detail Information</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-6">
+						{{message}}
+							<form role="form">
+								<fieldset disabled>
+									<div class="form-group">
+										<label for="disabledSelect">Customer Number</label> <input
+											class="form-control" id="disabledInput" type="text"
+											disabled
+											ng-model="query.customer.number">
+									</div>
+									<div class="form-group">
+										<label>Nick Name</label> <input class="form-control"
+											disabled
+											ng-model="query.customer.nickName">
+									</div>
+									<div class="form-group">
+										<label>Legal Name</label> <input class="form-control"
+											disabled
+											ng-model="query.customer.legalName">
+									</div>
+									<div class="form-group">
+										<label>Personal Home Page</label> <input class="form-control"
+											disabled
+											ng-model="query.customer.personalHomePageUrl">
+									</div>
+									<div class="form-group">
+										<label>Mobile Number</label> <input class="form-control"
+											disabled
+											ng-model="query.customer.mobileNumber">
+									</div>
+									<div class="form-group">
+										<label>Email</label> <input class="form-control"
+											disabled
+											ng-model="query.customer.emailAddress">
+									</div>
+									<div class="form-group">
+										<label>Category</label> <input class="form-control"
+											pdisabled
+											ng-model="query.customer.category">
+									</div>									
+								</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- /.panel -->
+			</div>
+			<!-- /.col-lg-6 -->
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->

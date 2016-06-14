@@ -1,0 +1,79 @@
+
+<div class="container">
+
+	<h2>Spring Cloud with Axon Event Sourcing, CQRS Example</h2>
+	<h3>Introduction</h3>
+	<p>This application is a Spring Cloud example of using
+		axon event sourcing in microservices. The project is intended to
+		demonstrate end-to-end practice for building a microservice
+		architecture that implement event sourcing and CQRS(Command Query
+		Responsibility Segregation) using Spring Cloud and Axon Framework. It
+		also demonstrates the usage of AngularJS SPA when building the Web UI
+		server.</p>
+	<p>The function of the application is simple: to do customer
+		creation, customer list and query. It includes the following
+		microservices:</p>
+	<ul>
+		<li>Edge Service that route request to different micro services
+			(Zuul)</li>
+		<li>Discovery Service that discover the micro service that
+			available and facilate Zuul for the routing (Eureka)</li>
+		<li>Configuration Service that used to provide center
+			configuration</li>
+		<li>Web UI Resource Server that contains the static resources
+			like html, javascript and css, etc.</li>
+		<li>Customer Command Service with Axon Event Sourcing, it would
+			handle customer creation, updates and also log the latest information
+			to DB2 which would be used for query.</li>
+		<li>Customer Query Service that handle query of customer
+			information.</li>
+	</ul>
+	<p>Architecture Diagram</p>
+	<p>
+		<img
+			src="https://raw.githubusercontent.com/sfav/axon-springboot-cloud/axon-sfav-webui/src/main/resources/static/image/sfav-architecture.jpg"
+			alt="Architecture Diagram" />
+	</p>
+	<p>This reference application uses the following data store, but
+		they could be changed to other type with small change.</p>
+	<ul>
+		<li>H2 - Customer Query</li>
+		<li>File - Axon Event Store</li>
+	</ul>
+	<h3>How to Run</h3>
+	<ol>
+		<li>
+			<p>
+				Download <a href="http://www.h2database.com/html/main.html">H2
+					databse</a> and run below command to start H2 database
+			</p> 
+			<pre><code>java -jar h2-1.4.192.jar -webAllowOthers -tcpAllowOthers</code></pre>
+
+		</li>
+		<li>
+			<p>git clone this repository and go to each maven module and
+				start those micro services using maven:</p> 
+				<pre><code>mvn spring-boot:run</code></pre>
+
+			<p>Note,</p>
+			<ul>
+				<li>The configuration service need to be started first so that
+					other service could get correct property.</li>
+				<li>The configuration service will get properties from <a
+					href="https://github.com/sfav/axon-springboot-cloud-config">Sfav
+						Configuration Repository</a>.
+				</li>
+				<li>There will be warning message shown for configuration
+					service due to not able to register with Eureka.</li>
+			</ul>
+		</li>
+		<li>Visit link http://{your-computer-name}:8080/ui, it will show
+			thisintroduction, click create to enter new customer, and then query
+			the customer list and see details.</li>
+	</ol>
+	<h3>License</h3>
+	<p>This project is licensed under Apache License 2.0.</p>
+
+
+</div>
+<!-- /.container -->

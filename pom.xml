@@ -7,9 +7,7 @@
   <packaging>pom</packaging>
   <modules>
   	<module>axon-sfav-customer</module>
-  	<module>axon-sfav-account</module>
   	<module>axon-sfav-query</module>
-  	<module>axon-sfav-transaction</module>
     <module>axon-sfav-center-config</module>
     <module>axon-sfav-gateway</module>
     <module>axon-sfav-service-discovery</module>

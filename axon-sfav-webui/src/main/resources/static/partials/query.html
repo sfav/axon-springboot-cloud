@@ -1,0 +1,65 @@
+<!-- Page Content -->
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">Customer Inquiry
+                <small>To List and View Customer Details</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/ui/index.html">Home</a>
+                </li>
+                <li class="active">Customer Inquiry</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <!-- /.col-lg-6 -->
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    List of Customers
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                    {{message}}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Customer Number</th>
+                                    <th>Nick Name</th>
+                                    <th>Legal Name</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="c in customers | orderBy:'identifier'" class="info">
+                                    <td>{{c.identifier}}</td>
+                                    <td>{{c.nickName}}</td>
+                                    <td>{{c.legalName}}</td>
+                                    <td>{{c.category}}</td>
+                                    <td><a class="alert-link" ng-click="queryCustomer(c)">See Details</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+  
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->

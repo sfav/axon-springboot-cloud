@@ -47,6 +47,7 @@ import cn.designthoughts.sample.axon.sfav.customer.controller.request.CreateAddr
 import cn.designthoughts.sample.axon.sfav.customer.controller.request.CreateCustomerRequest;
 import cn.designthoughts.sample.axon.sfav.customer.domain.Address;
 import cn.designthoughts.sample.axon.sfav.customer.domain.Customer;
+import cn.designthoughts.sample.axon.sfav.customer.domain.Status;
 import cn.designthoughts.sample.axon.sfav.customer.domain.CustomerId;
 
 /**
@@ -67,6 +68,11 @@ public class CustomerController {
 	@RequestMapping(value = "/rest/customers", method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	public void createCustomer(@RequestBody @Valid CreateCustomerRequest request) {
+		String creationDate = new Date().toString();
+		Status status = Status.INACTIVE;
+		if(request.getStatus() != null){
+			status = request.getStatus();
+		}
 		commandGateway.send(
 				new CreateCustomerCommand(
 						request.getCustomerId(),
@@ -78,10 +84,11 @@ public class CustomerController {
 						request.getMobileNumber(),
 						request.getRole(),
 						request.getCategory(),
-						request.getStatus(),
+						status,
 						request.getEmailAddress(),
-						request.getCreationDate()
+						creationDate
 				));
+		
 		return;
 	}
 
